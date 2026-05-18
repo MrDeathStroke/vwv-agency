@@ -11,9 +11,9 @@ type State =
   | { kind: "error"; message: string };
 
 const tierOptions = [
-  { value: "scout", label: "Scout · 2 weeks · $18K" },
-  { value: "build", label: "Build · 6 weeks · $72K" },
-  { value: "scale", label: "Scale · 12 weeks · $160K" },
+  { value: "scout", label: "Scout · 2 weeks · find a workflow" },
+  { value: "build", label: "Build · 6 weeks · rebuild and ship one" },
+  { value: "scale", label: "Scale · 12 weeks · multi-workflow program" },
   { value: "unsure", label: "Not sure yet — help us scope" },
 ];
 

@@ -21,8 +21,8 @@ const steps: Step[] = [
     w: "WEEK 1",
     label: "Plan",
     title: "One page. One signature.",
-    body: "We come back with a one-page sprint plan: scope, price, timebox, the three metrics, and the stop-conditions. You sign one page. The clock starts when the page is signed.",
-    deliverable: "Signed sprint plan + invoice for 50% deposit.",
+    body: "We come back with a one-page sprint plan: scope, timebox, the three metrics we will move, the stop-conditions, and the commercial terms. You sign one page. The clock starts when the page is signed.",
+    deliverable: "Signed sprint plan and commercial terms.",
   },
   {
     w: "WEEK 2",

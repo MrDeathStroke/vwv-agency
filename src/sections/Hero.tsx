@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { motion } from "motion/react";
-import { gsap, ScrollTrigger } from "../lib/gsap";
+import { gsap } from "../lib/gsap";
 
 const stamps = [
   { k: "Scope", v: "Fixed" },
-  { k: "Price", v: "Fixed" },
   { k: "Timebox", v: "Weeks" },
   { k: "Receipts", v: "Weekly" },
+  { k: "Lead", v: "Founder" },
 ];
 
 export function Hero() {
@@ -49,27 +49,6 @@ export function Hero() {
           ease: "expo.out",
           stagger: 0.05,
         }, "-=0.4");
-
-      // Live counter
-      const counter = document.querySelector<HTMLElement>("[data-counter]");
-      if (counter) {
-        const obj = { v: 0 };
-        ScrollTrigger.create({
-          trigger: counter,
-          start: "top 95%",
-          once: true,
-          onEnter: () => {
-            gsap.to(obj, {
-              v: 47,
-              duration: 1.8,
-              ease: "expo.out",
-              onUpdate: () => {
-                counter.textContent = String(Math.round(obj.v));
-              },
-            });
-          },
-        });
-      }
     },
     { scope: root }
   );
@@ -95,7 +74,7 @@ export function Hero() {
         <div className="grid gap-16 lg:gap-20 lg:grid-cols-12 items-start">
           {/* Left: Headline + CTA */}
           <div className="lg:col-span-7">
-            {/* Eyebrow with availability stamp */}
+            {/* Eyebrow — founder-led availability */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -107,7 +86,7 @@ export function Hero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#2E8F6A]" />
               </span>
               <span className="font-mono text-[10px] uppercase tracking-widest text-[color:var(--color-text-secondary)]">
-                Booking 2 sprints · May–July
+                Founder-led · Taking pilot sprints
               </span>
             </motion.div>
 
@@ -173,7 +152,7 @@ export function Hero() {
             </ul>
           </div>
 
-          {/* Right: Receipts callout card */}
+          {/* Right: what you sign card */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -183,53 +162,34 @@ export function Hero() {
             <div className="relative rounded-lg border border-[color:var(--color-border-subtle)] bg-[color:var(--color-canvas-raised)] overflow-hidden">
               {/* Card header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-[color:var(--color-border-subtle)] bg-[color:var(--color-canvas-sunken)]">
-                <p className="eyebrow">Sprint receipts · sample</p>
-                <span className="font-mono text-[10px] tracking-widest text-[color:var(--color-text-tertiary)]">
-                  WEEK 4 / 6
+                <p className="eyebrow">The one-page sprint plan</p>
+                <span className="font-mono text-[10px] tracking-widest text-[color:var(--color-accent)]">
+                  WHAT YOU SIGN
                 </span>
               </div>
 
-              {/* Card body — workflow shipped */}
-              <div className="p-6 lg:p-7">
-                <p className="font-mono text-xs text-[color:var(--color-text-tertiary)]">
-                  WORKFLOW
-                </p>
-                <p className="mt-1 font-display text-lg font-semibold tracking-tighter text-[color:var(--color-text-primary)]">
-                  Month-end financial close
-                </p>
+              {/* Card body */}
+              <div className="p-6 lg:p-7 space-y-5">
+                <FieldRow k="Workflow" v="Named on the call" />
+                <FieldRow k="Timebox" v="Fixed, 2–12 weeks" />
+                <FieldRow k="Scope" v="Listed line-by-line on page one" />
+                <FieldRow
+                  k="Metrics we'll move"
+                  v="Cycle time · run cost · error rate"
+                />
+                <FieldRow k="Stop-conditions" v="Named upfront" />
+                <FieldRow k="Hand-off" v="Runbook + ownership transfer" />
 
-                {/* Metric rows */}
-                <div className="mt-6 space-y-5">
-                  <MetricRow
-                    label="Cycle time"
-                    from="9.2 days"
-                    to="1.8 days"
-                    delta="−80%"
-                  />
-                  <MetricRow
-                    label="Annualised OPEX out"
-                    from="—"
-                    to="$340K"
-                    delta="−31%"
-                  />
-                  <MetricRow
-                    label="Manual reconciliation errors"
-                    from="48 / mo"
-                    to="3 / mo"
-                    delta="−94%"
-                  />
-                </div>
-
-                {/* Footer — sprints shipped this year counter */}
-                <div className="mt-7 pt-5 border-t border-[color:var(--color-border-subtle)] flex items-end justify-between">
+                {/* Footer */}
+                <div className="pt-5 border-t border-[color:var(--color-border-subtle)] flex items-end justify-between gap-4">
                   <div>
-                    <p className="eyebrow">Sprints shipped · YTD</p>
-                    <p className="mt-1 font-display text-4xl font-semibold tracking-tighter text-[color:var(--color-text-primary)] tabular-nums">
-                      <span data-counter>0</span>
+                    <p className="eyebrow">Reply window</p>
+                    <p className="mt-1 font-display text-2xl font-semibold tracking-tighter text-[color:var(--color-text-primary)]">
+                      48 hours
                     </p>
                   </div>
-                  <p className="font-mono text-[10px] tracking-widest text-[color:var(--color-text-tertiary)] max-w-[140px] text-right">
-                    Receipts signed by every CFO.
+                  <p className="font-mono text-[10px] tracking-widest text-[color:var(--color-text-tertiary)] max-w-[150px] text-right leading-relaxed">
+                    From scoping call to plan in your inbox.
                   </p>
                 </div>
               </div>
@@ -241,40 +201,13 @@ export function Hero() {
   );
 }
 
-function MetricRow({
-  label,
-  from,
-  to,
-  delta,
-}: {
-  label: string;
-  from: string;
-  to: string;
-  delta: string;
-}) {
+function FieldRow({ k, v }: { k: string; v: string }) {
   return (
-    <div>
-      <div className="flex items-center justify-between">
-        <p className="text-xs text-[color:var(--color-text-secondary)]">
-          {label}
-        </p>
-        <p className="font-mono text-xs font-semibold text-[color:var(--color-accent)] tabular-nums">
-          {delta}
-        </p>
-      </div>
-      <div className="mt-1 flex items-baseline gap-2 font-mono text-sm tabular-nums">
-        <span className="text-[color:var(--color-text-tertiary)] line-through decoration-[color:var(--color-text-tertiary)]/40">
-          {from}
-        </span>
-        <span className="text-[color:var(--color-text-tertiary)]">→</span>
-        <span className="text-[color:var(--color-text-primary)] font-semibold">
-          {to}
-        </span>
-      </div>
-      {/* Bar visualization */}
-      <div className="mt-2 h-1 w-full bg-[color:var(--color-border-subtle)] rounded-full overflow-hidden">
-        <div className="h-full w-[18%] bg-[color:var(--color-accent)] rounded-full" />
-      </div>
+    <div className="grid grid-cols-12 gap-3 items-baseline">
+      <p className="col-span-5 eyebrow">{k}</p>
+      <p className="col-span-7 text-sm text-[color:var(--color-text-primary)] text-pretty">
+        {v}
+      </p>
     </div>
   );
 }

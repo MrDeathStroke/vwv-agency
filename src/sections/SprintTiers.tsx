@@ -7,14 +7,12 @@ type Tier = {
   code: string;
   name: string;
   positioning: string;
-  price: string;
-  priceNote: string;
   timebox: string;
+  commitment: string;
   outcomeLabel: string;
   outcome: string;
   scope: string[];
   bestFor: string;
-  featured?: boolean;
 };
 
 const tiers: Tier[] = [
@@ -22,16 +20,15 @@ const tiers: Tier[] = [
     code: "S1",
     name: "Scout",
     positioning: "Find the workflow worth rebuilding.",
-    price: "$18,000",
-    priceNote: "fixed · one signature",
     timebox: "2 weeks",
+    commitment: "Fixed scope · one signature",
     outcomeLabel: "Outcome",
     outcome:
-      "One named workflow, instrumented baseline, a one-page sprint plan with the metric we will move.",
+      "One named workflow, an instrumented baseline, and a one-page sprint plan with the metric we will move. If there is no workflow worth rebuilding, the deliverable is that conclusion in writing.",
     scope: [
-      "Discovery interviews with 3 workflow owners",
-      "Baseline measurement of Cycle Time + OPEX + error rate",
-      "One-page sprint plan, signed before Build kicks off",
+      "Discovery interviews with the workflow owners",
+      "Baseline measurement of cycle time, run cost, and error rate",
+      "One-page sprint plan, signed before any Build kicks off",
       "Risk register and stop-conditions",
     ],
     bestFor:
@@ -41,42 +38,39 @@ const tiers: Tier[] = [
     code: "S2",
     name: "Build",
     positioning: "Rebuild it. Ship it. Report receipts.",
-    price: "$72,000",
-    priceNote: "fixed · weekly receipts",
     timebox: "6 weeks",
+    commitment: "Fixed scope · weekly receipts",
     outcomeLabel: "Outcome",
     outcome:
-      "The workflow is rebuilt around AI orchestration and automation, deployed in production, and the three metrics on the plan move on the close-out call.",
+      "The named workflow is rebuilt around AI orchestration and automation, deployed in production, and reported against the three metrics signed on the plan.",
     scope: [
       "Architecture review and rebuild plan",
-      "AI orchestration layer + tool-calling agents in your stack",
+      "AI orchestration layer with tool-calling agents in your stack",
       "Continuous evals against a held-out test set",
-      "Weekly receipts call: 15 minutes, three metrics, no slides",
-      "Production hand-off with runbook and ownership",
+      "Weekly 15-minute receipts call — three metrics, no slides",
+      "Production hand-off with runbook and ownership transfer",
     ],
     bestFor:
       "Teams ready to deploy a real change to an operational workflow this quarter.",
-    featured: true,
   },
   {
     code: "S3",
     name: "Scale",
-    positioning: "Multiply the win across the next three workflows.",
-    price: "$160,000",
-    priceNote: "fixed · three-workflow program",
+    positioning: "Multiply the win across the next workflows.",
     timebox: "12 weeks",
+    commitment: "Fixed scope · multi-workflow program",
     outcomeLabel: "Outcome",
     outcome:
-      "Three workflows rebuilt in series, a shared orchestration substrate the team owns, and a single dashboard tracking nine metrics across all three.",
+      "A sequence of Build sprints across related workflows, sharing one orchestration substrate the team owns by the end, and one dashboard reporting the metrics signed for each.",
     scope: [
       "Three Build sprints, sequenced and dependency-aware",
-      "Shared orchestration substrate across all three workflows",
-      "Unified metrics dashboard, exported to the team's existing BI",
-      "Internal champion training so the team operates it after we leave",
-      "Post-sprint retrospective with the CFO and the operations lead",
+      "Shared orchestration substrate across the workflows",
+      "Unified metrics dashboard, exported to your existing BI",
+      "Champion training so the team operates the substrate without us",
+      "Sprint retrospective with the operations lead and the CFO",
     ],
     bestFor:
-      "Teams that have proven one workflow with us and want to compound the gain across the operation.",
+      "Teams that have completed a Build with us and want to compound the gain across adjacent operations.",
   },
 ];
 
@@ -122,13 +116,13 @@ export function SprintTiers() {
               <p className="eyebrow">Sprints · the menu</p>
             </div>
             <h2 className="font-display font-semibold tracking-tightest leading-[1.0] text-[color:var(--color-text-primary)] text-[clamp(2rem,5vw,4rem)] max-w-3xl text-balance">
-              Three productized sprints. Pick one. Sign it. Ship it.
+              Three productized sprints. Pick the shape. Scope it on the call.
             </h2>
           </div>
           <p className="lg:max-w-sm text-sm text-[color:var(--color-text-secondary)] text-pretty">
-            Every sprint has a fixed price, a fixed scope, and a fixed end
-            date. If a sprint cannot be priced and dated on one page, it is
-            not a sprint we sell.
+            Every sprint has a fixed scope and a fixed end date. Pricing is
+            scoped per workflow because the workflow drives the price, and the
+            scoping call costs you nothing.
           </p>
         </div>
 
@@ -141,7 +135,7 @@ export function SprintTiers() {
 
         {/* Footnote */}
         <p className="mt-12 font-mono text-xs uppercase tracking-widest text-[color:var(--color-text-tertiary)] text-center">
-          All sprints invoiced on signature · 50% deposit · balance on close-out
+          Scoping call is free · Sprint quoted in writing within 48 hours
         </p>
       </div>
     </section>
@@ -154,19 +148,8 @@ function TierCard({ tier }: { tier: Tier }) {
       data-tier
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 200, damping: 20 }}
-      className={[
-        "relative rounded-lg border bg-[color:var(--color-canvas-raised)] p-6 lg:p-8 flex flex-col gap-6 h-full",
-        tier.featured
-          ? "border-[color:var(--color-text-primary)] ring-1 ring-[color:var(--color-text-primary)]/30"
-          : "border-[color:var(--color-border-subtle)]",
-      ].join(" ")}
+      className="relative rounded-lg border border-[color:var(--color-border-subtle)] bg-[color:var(--color-canvas-raised)] p-6 lg:p-8 flex flex-col gap-6 h-full"
     >
-      {tier.featured && (
-        <span className="absolute -top-3 right-6 font-mono text-[10px] uppercase tracking-widest bg-[color:var(--color-accent)] text-[color:var(--color-accent-fg)] px-2 py-1 rounded-full">
-          Most-shipped
-        </span>
-      )}
-
       {/* Header */}
       <header>
         <div className="flex items-baseline justify-between mb-3">
@@ -185,14 +168,20 @@ function TierCard({ tier }: { tier: Tier }) {
         </p>
       </header>
 
-      {/* Price */}
-      <div className="border-y border-[color:var(--color-border-subtle)] py-5">
-        <p className="font-display text-3xl font-semibold tracking-tightest text-[color:var(--color-text-primary)] tabular-nums">
-          {tier.price}
-        </p>
-        <p className="mt-1 font-mono text-[11px] uppercase tracking-widest text-[color:var(--color-text-tertiary)]">
-          {tier.priceNote}
-        </p>
+      {/* Commitment + pricing note */}
+      <div className="border-y border-[color:var(--color-border-subtle)] py-5 space-y-3">
+        <div>
+          <p className="eyebrow">Commitment</p>
+          <p className="mt-1 font-display text-base font-medium text-[color:var(--color-text-primary)]">
+            {tier.commitment}
+          </p>
+        </div>
+        <div>
+          <p className="eyebrow">Pricing</p>
+          <p className="mt-1 font-mono text-sm text-[color:var(--color-text-primary)]">
+            Scoped per workflow on the call.
+          </p>
+        </div>
       </div>
 
       {/* Outcome */}
@@ -246,14 +235,9 @@ function TierCard({ tier }: { tier: Tier }) {
       {/* CTA */}
       <a
         href="#book"
-        className={[
-          "mt-2 inline-flex items-center justify-between gap-2 h-12 px-5 rounded-md text-sm font-medium transition-colors",
-          tier.featured
-            ? "bg-[color:var(--color-accent)] text-[color:var(--color-accent-fg)] hover:bg-[color:var(--color-accent-hover)]"
-            : "bg-[color:var(--color-text-primary)] text-[color:var(--color-canvas)] hover:bg-[color:var(--color-accent)] hover:text-[color:var(--color-accent-fg)]",
-        ].join(" ")}
+        className="mt-2 inline-flex items-center justify-between gap-2 h-12 px-5 rounded-md text-sm font-medium bg-[color:var(--color-text-primary)] text-[color:var(--color-canvas)] hover:bg-[color:var(--color-accent)] hover:text-[color:var(--color-accent-fg)] transition-colors"
       >
-        <span>Configure {tier.name}</span>
+        <span>Scope a {tier.name} sprint</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" aria-hidden>
           <path d="M5 12h14M13 5l7 7-7 7" />
         </svg>

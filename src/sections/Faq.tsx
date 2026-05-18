@@ -5,20 +5,24 @@ type QA = { q: string; a: string };
 
 const faqs: QA[] = [
   {
+    q: "How much does a sprint cost?",
+    a: "Pricing is scoped per workflow because the workflow drives the price. The scoping call is free and the quote comes back in writing within 48 hours, tied to the one-page sprint plan. We do not have public price tiers because we do not want to start a workflow we cannot ship at the priced level.",
+  },
+  {
     q: "What if you don't move the metrics?",
-    a: "If the three numbers on the signed plan do not move by close-out, we refund the balance and do not invoice the final 50%. The deposit covers the work that ran. We have only owed a refund once.",
+    a: "The sprint plan names stop-conditions on the front page. If the three signed metrics are not moving by mid-sprint, we trigger one of those stop-conditions together — scope shrinks, or the sprint pauses, or we refund the balance. We would rather end a sprint honestly than ship a workflow that does not earn its keep.",
   },
   {
     q: "Do you take equity instead of cash?",
-    a: "No. Sprints are priced in cash because the contract is falsifiable in cash. Equity introduces incentives that work against a six-week timebox and a CFO who has to sign the close-out.",
+    a: "No. Sprints are priced in cash because the contract is falsifiable in cash. Equity introduces incentives that work against a fixed timebox and a CFO who has to sign the close-out.",
   },
   {
     q: "Can you sign an NDA?",
-    a: "Yes, mutual NDA on the scoping call. Once signed, we can name the workflow and discuss baselines openly. Public case studies stay anonymised unless we agree otherwise in writing.",
+    a: "Yes — mutual NDA before the scoping call. Once signed, we can name the workflow and discuss baselines openly. If you become a public case study, it is only with your written permission.",
   },
   {
     q: "What if the workflow takes longer than the timebox?",
-    a: "Sprints are fixed-timebox. If a workflow is too big for the timebox, we say so during Scout and split it into two sprints. If a sprint we already started begins to slip, we shrink scope to hit the date — never extend the date to absorb scope.",
+    a: "Sprints are fixed-timebox. If a workflow is too big for the timebox, we say so during Scout and split it into two sprints. If a sprint we already started begins to slip, we shrink scope to hit the date. We do not extend the date to absorb scope.",
   },
   {
     q: "Do we have to use your stack?",
@@ -26,15 +30,11 @@ const faqs: QA[] = [
   },
   {
     q: "What's the smallest engagement you'll take?",
-    a: "A 2-week Scout sprint at $18K. Scout exists for teams that want a falsifiable, instrumented plan before committing to a Build. If Scout finds nothing worth rebuilding, the deliverable is that conclusion in writing.",
-  },
-  {
-    q: "Do you work with regulated industries?",
-    a: "Yes — financial services, insurance, healthcare-adjacent. We keep data in your VPC, route around regulated data classes where we can, and add a compliance disclosure block to the sprint plan when the workflow touches PHI or PII at scale.",
+    a: "A 2-week Scout sprint. Scout exists for teams that want a falsifiable, instrumented plan before committing to a Build. If Scout finds nothing worth rebuilding, the deliverable is that conclusion in writing — and the next conversation can happen six months later.",
   },
   {
     q: "Who actually does the work?",
-    a: "Purvang leads every sprint. A small, deliberately constant team rebuilds the workflow alongside your engineers. We do not subcontract, do not staff-augment, and do not change the team mid-sprint.",
+    a: "Purvang leads every sprint personally. A small, deliberately constant team rebuilds the workflow alongside your engineers. We do not subcontract, do not staff-augment, and do not change the team mid-sprint.",
   },
 ];
 

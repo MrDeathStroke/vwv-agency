@@ -76,16 +76,17 @@ export function Stack() {
                 04
               </span>
               <span className="h-px w-12 bg-[color:var(--color-border)]" />
-              <p className="eyebrow">Stack · what we build with</p>
+              <p className="eyebrow">Stack · the layers we build with</p>
             </div>
             <h2 className="font-display font-semibold tracking-tightest leading-[1.0] text-[color:var(--color-text-primary)] text-[clamp(2rem,5vw,4rem)] max-w-3xl text-balance">
-              Six layers. Each one specified, not guessed.
+              Six layers. Each one chosen on purpose.
             </h2>
           </div>
           <p className="lg:max-w-sm text-sm text-[color:var(--color-text-secondary)] text-pretty">
-            The stack is opinionated, not religious. We use what fits the
-            workflow, hand off what we built, and document the choice on
-            sprint close-out.
+            The stack is opinionated, not religious. We pick the layer
+            components that fit the workflow at hand, document the choice in
+            the sprint plan, and hand off something your team can operate
+            after we leave.
           </p>
         </div>
 
@@ -95,7 +96,7 @@ export function Stack() {
           <div className="hidden md:grid grid-cols-12 gap-6 px-6 py-3 border-b border-[color:var(--color-border-subtle)] bg-[color:var(--color-canvas-sunken)]">
             <p className="col-span-3 eyebrow">Layer</p>
             <p className="col-span-5 eyebrow">What it does</p>
-            <p className="col-span-4 eyebrow">Tools we reach for</p>
+            <p className="col-span-4 eyebrow">Tools on the shortlist</p>
           </div>
           {layers.map((row) => (
             <motion.div
