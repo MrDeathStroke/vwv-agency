@@ -10,7 +10,7 @@ const faqs: QA[] = [
   },
   {
     q: "What if you don't move the metrics?",
-    a: "The sprint plan names stop-conditions on the front page. If the three signed metrics are not moving by mid-sprint, we trigger one of those stop-conditions together — scope shrinks, or the sprint pauses, or we refund the balance. We would rather end a sprint honestly than ship a workflow that does not earn its keep.",
+    a: "The sprint plan names stop-conditions on the front page. If the three signed metrics are not moving by mid-sprint, we trigger one of those stop-conditions together. Scope shrinks, or the sprint pauses, or we refund the balance. We would rather end a sprint honestly than ship a workflow that does not earn its keep.",
   },
   {
     q: "Do you take equity instead of cash?",
@@ -18,7 +18,7 @@ const faqs: QA[] = [
   },
   {
     q: "Can you sign an NDA?",
-    a: "Yes — mutual NDA before the scoping call. Once signed, we can name the workflow and discuss baselines openly. If you become a public case study, it is only with your written permission.",
+    a: "Yes. Mutual NDA before the scoping call. Once signed, we can name the workflow and discuss baselines openly. If you become a public case study, it is only with your written permission.",
   },
   {
     q: "What if the workflow takes longer than the timebox?",
@@ -30,7 +30,7 @@ const faqs: QA[] = [
   },
   {
     q: "What's the smallest engagement you'll take?",
-    a: "A 2-week Scout sprint. Scout exists for teams that want a falsifiable, instrumented plan before committing to a Build. If Scout finds nothing worth rebuilding, the deliverable is that conclusion in writing — and the next conversation can happen six months later.",
+    a: "A 2-week Scout sprint. Scout exists for teams that want a falsifiable, instrumented plan before committing to a Build. If Scout finds nothing worth rebuilding, the deliverable is that conclusion in writing, and the next conversation can happen six months later.",
   },
   {
     q: "Who actually does the work?",

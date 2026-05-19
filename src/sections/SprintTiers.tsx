@@ -47,7 +47,7 @@ const tiers: Tier[] = [
       "Architecture review and rebuild plan",
       "AI orchestration layer with tool-calling agents in your stack",
       "Continuous evals against a held-out test set",
-      "Weekly 15-minute receipts call — three metrics, no slides",
+      "Weekly 15-minute receipts call. Three metrics, no slides.",
       "Production hand-off with runbook and ownership transfer",
     ],
     bestFor:

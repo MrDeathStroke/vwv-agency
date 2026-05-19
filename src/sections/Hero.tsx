@@ -74,22 +74,6 @@ export function Hero() {
         <div className="grid gap-16 lg:gap-20 lg:grid-cols-12 items-start">
           {/* Left: Headline + CTA */}
           <div className="lg:col-span-7">
-            {/* Eyebrow — founder-led availability */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-3 mb-10 px-3 py-1.5 rounded-full bg-[color:var(--color-canvas-raised)] border border-[color:var(--color-border-subtle)]"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-[#2E8F6A] opacity-60 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#2E8F6A]" />
-              </span>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-[color:var(--color-text-secondary)]">
-                Founder-led · Taking pilot sprints
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <h1 className="font-display font-semibold tracking-tightest leading-[0.92] text-[color:var(--color-text-primary)] text-[clamp(2.75rem,8vw,6.5rem)] text-balance m-0">
               <span className="block overflow-hidden pb-[0.05em]">

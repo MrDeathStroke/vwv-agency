@@ -109,7 +109,7 @@ export function Receipts() {
           </div>
           <p className="lg:max-w-sm text-sm text-[color:var(--color-text-secondary)] text-pretty">
             We do not publish other people's numbers as ours. Below is the
-            shape of a Build sprint — the workflows we look for, the metrics
+            shape of a Build sprint. The workflows we look for. The metrics
             we report against. Real receipts will live here as soon as
             pilot sprints close out, named only with client permission.
           </p>
@@ -204,7 +204,7 @@ export function Receipts() {
               <div className="bg-[color:var(--color-canvas-sunken)] p-5">
                 <p className="text-xs text-[color:var(--color-text-secondary)] text-pretty leading-relaxed">
                   Same instruments measure baseline and rebuilt state. The
-                  deltas are what gets signed at close-out — by whoever owns
+                  deltas are what gets signed at close-out, by whoever owns
                   the workflow and whoever owns the budget.
                 </p>
               </div>
@@ -233,7 +233,7 @@ export function Receipts() {
             scoping calls are free and the plan is yours to keep.
           </p>
           <p className="mt-4 font-mono text-xs text-[color:var(--color-text-tertiary)]">
-            — Purvang Joshi, founder
+            Purvang Joshi, founder
           </p>
         </motion.div>
       </div>

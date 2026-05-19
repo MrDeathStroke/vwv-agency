@@ -14,7 +14,7 @@ const tierOptions = [
   { value: "scout", label: "Scout · 2 weeks · find a workflow" },
   { value: "build", label: "Build · 6 weeks · rebuild and ship one" },
   { value: "scale", label: "Scale · 12 weeks · multi-workflow program" },
-  { value: "unsure", label: "Not sure yet — help us scope" },
+  { value: "unsure", label: "Not sure yet. Help us scope it." },
 ];
 
 export function BookCall() {
