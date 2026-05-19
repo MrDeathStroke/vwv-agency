@@ -15,8 +15,8 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-6 max-w-md text-[color:var(--color-text-secondary)] text-pretty">
-              The Muscle. Fixed-scope, fixed-price sprints that ship measurable
-              workflow change in weeks, not quarters.
+              Fixed-scope sprints that ship AI automation against the
+              workflows your team actually runs. On your premises. In days.
             </p>
           </div>
 
@@ -24,17 +24,17 @@ export function Footer() {
           <div className="lg:col-span-3">
             <p className="eyebrow mb-4">Site</p>
             <ul className="space-y-2 text-sm">
+              <li><a href="#sectors" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Sectors</a></li>
               <li><a href="#sprints" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Sprints</a></li>
               <li><a href="#process" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Process</a></li>
-              <li><a href="#receipts" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Receipts</a></li>
               <li><a href="#faq" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">FAQ</a></li>
               <li><a href="#book" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Book a call</a></li>
             </ul>
           </div>
 
-          {/* The Mind */}
+          {/* Cross-link to the dispatches */}
           <div className="lg:col-span-4">
-            <p className="eyebrow mb-4">The other surface</p>
+            <p className="eyebrow mb-4">Read the thinking</p>
             <a
               href="https://valuewithvelocity.com"
               className="group block rounded-lg border border-[color:var(--color-border-subtle)] hover:border-[color:var(--color-accent)] p-5 transition-colors bg-[color:var(--color-canvas-raised)]"
@@ -43,8 +43,7 @@ export function Footer() {
                 valuewithvelocity.com
               </p>
               <p className="mt-1 text-sm text-[color:var(--color-text-secondary)]">
-                The Mind. Long-form thinking on outcome velocity and AI-native
-                operations.
+                Long-form essays from Purvang on the end of the SaaS-template era, process debt, and AI-native operations.
               </p>
               <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--color-accent)]">
                 Read dispatches
