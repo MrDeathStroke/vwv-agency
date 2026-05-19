@@ -4,6 +4,7 @@ import { Sectors } from "../sections/Sectors";
 import { SprintTiers } from "../sections/SprintTiers";
 import { Process } from "../sections/Process";
 import { Stack } from "../sections/Stack";
+import { JoinUs } from "../sections/JoinUs";
 import { Faq } from "../sections/Faq";
 import { BookCall } from "../sections/BookCall";
 import { ScrollTrigger } from "../lib/gsap";
@@ -22,6 +23,7 @@ export function Home() {
       <SprintTiers />
       <Process />
       <Stack />
+      <JoinUs />
       <Faq />
       <BookCall />
     </>

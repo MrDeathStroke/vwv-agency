@@ -3,13 +3,6 @@ import { useGSAP } from "@gsap/react";
 import { motion } from "motion/react";
 import { gsap } from "../lib/gsap";
 
-const stamps = [
-  { k: "Scope", v: "Fixed" },
-  { k: "Timebox", v: "Weeks" },
-  { k: "Receipts", v: "Weekly" },
-  { k: "Lead", v: "Founder" },
-];
-
 export function Hero() {
   const root = useRef<HTMLElement>(null);
 
@@ -18,7 +11,6 @@ export function Hero() {
       gsap.set("[data-h-line]", { yPercent: 110, opacity: 0 });
       gsap.set("[data-h-lede]", { y: 18, opacity: 0 });
       gsap.set("[data-h-cta]", { y: 12, opacity: 0 });
-      gsap.set("[data-h-stamp]", { y: 10, opacity: 0 });
 
       const intro = gsap.timeline({ delay: 0.18 });
       intro
@@ -41,14 +33,7 @@ export function Hero() {
           duration: 0.7,
           ease: "expo.out",
           stagger: 0.08,
-        }, "-=0.45")
-        .to("[data-h-stamp]", {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: "expo.out",
-          stagger: 0.05,
-        }, "-=0.4");
+        }, "-=0.45");
     },
     { scope: root }
   );
@@ -129,21 +114,6 @@ export function Hero() {
               </a>
             </div>
 
-            {/* Stamp row */}
-            <ul className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {stamps.map((s) => (
-                <li
-                  key={s.k}
-                  data-h-stamp
-                  className="border-t border-[color:var(--color-border-subtle)] pt-3"
-                >
-                  <p className="eyebrow">{s.k}</p>
-                  <p className="mt-1 font-display text-base font-medium text-[color:var(--color-text-primary)]">
-                    {s.v}
-                  </p>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Right: what you sign card */}
