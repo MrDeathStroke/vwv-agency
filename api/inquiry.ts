@@ -9,6 +9,8 @@ const EMAIL_RX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
 const FROM = process.env.RESEND_FROM || "VWV <onboarding@resend.dev>";
 const INBOX = process.env.RESEND_INBOX || "hello@vwv.agency";
+const SITE_URL = process.env.SITE_URL || "https://vwv.agency";
+const MIND_URL = process.env.MIND_URL || "https://valuewithvelocity.com";
 
 type Body = {
   name?: string;
@@ -101,17 +103,19 @@ export default async function handler(req: Request) {
         `Thanks for sending over the inquiry for ${company}. Purvang has it.`,
         ``,
         `Next step: reply within 24 hours with two or three time options for a`,
-        `30-minute scoping call. The call is free, the deliverable after the`,
-        `call is a one-page sprint plan with a fixed price and timebox.`,
+        `30-minute scoping call. The call is free. The deliverable after the`,
+        `call is a one-page sprint plan with a fixed timebox.`,
         ``,
         `If you need to reach a human in the meantime, just reply to this email.`,
         ``,
-        `— VWV.agency`,
-        `Outcome velocity.`,
+        `VWV.agency · Outcome velocity.`,
+        `${SITE_URL}`,
+        ``,
+        `Long-form thinking lives at ${MIND_URL}.`,
       ].join("\n"),
     });
   } catch (err) {
-    // Don't block — the internal notification already worked.
+    // Don't block. The internal notification already worked.
     console.error("resend.emails.send (confirmation) failed:", err);
   }
 
