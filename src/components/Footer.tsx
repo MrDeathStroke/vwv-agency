@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AnimatedVMark } from "./AnimatedVMark";
 
 export function Footer() {
@@ -24,11 +25,12 @@ export function Footer() {
           <div className="lg:col-span-3">
             <p className="eyebrow mb-4">Site</p>
             <ul className="space-y-2 text-sm">
-              <li><a href="#sectors" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Sectors</a></li>
-              <li><a href="#sprints" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Sprints</a></li>
-              <li><a href="#process" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Process</a></li>
-              <li><a href="#faq" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">FAQ</a></li>
-              <li><a href="#book" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Book a call</a></li>
+              <li><Link to="/#sectors" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Sectors</Link></li>
+              <li><Link to="/#sprints" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Sprints</Link></li>
+              <li><Link to="/#process" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Process</Link></li>
+              <li><Link to="/careers" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Join us</Link></li>
+              <li><Link to="/#faq" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">FAQ</Link></li>
+              <li><Link to="/#book" className="text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-accent)] transition-colors">Book a call</Link></li>
             </ul>
           </div>
 

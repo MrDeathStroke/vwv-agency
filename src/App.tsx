@@ -1,39 +1,28 @@
-import { useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
-import { Hero } from "./sections/Hero";
-import { Sectors } from "./sections/Sectors";
-import { SprintTiers } from "./sections/SprintTiers";
-import { Process } from "./sections/Process";
-import { Stack } from "./sections/Stack";
-import { Faq } from "./sections/Faq";
-import { BookCall } from "./sections/BookCall";
-import { ScrollTrigger } from "./lib/gsap";
+import { ScrollToHash } from "./components/ScrollToHash";
+import { Home } from "./pages/Home";
+import { Careers } from "./pages/Careers";
 import { useSystemTheme } from "./hooks/useSystemTheme";
 
 function App() {
   useSystemTheme();
 
-  useEffect(() => {
-    const t = setTimeout(() => ScrollTrigger.refresh(), 300);
-    document.fonts?.ready.then(() => ScrollTrigger.refresh());
-    return () => clearTimeout(t);
-  }, []);
-
   return (
-    <>
+    <BrowserRouter>
+      <ScrollToHash />
       <Nav />
       <main>
-        <Hero />
-        <Sectors />
-        <SprintTiers />
-        <Process />
-        <Stack />
-        <Faq />
-        <BookCall />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/join" element={<Careers />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
       </main>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

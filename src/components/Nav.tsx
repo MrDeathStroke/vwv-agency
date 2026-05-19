@@ -1,20 +1,23 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import { AnimatePresence, motion } from "motion/react";
 import { gsap } from "../lib/gsap";
 import { AnimatedVMark } from "./AnimatedVMark";
 
 const links = [
-  { label: "Sectors", href: "#sectors" },
-  { label: "Sprints", href: "#sprints" },
-  { label: "Process", href: "#process" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Sectors", to: "/#sectors" },
+  { label: "Sprints", to: "/#sprints" },
+  { label: "Process", to: "/#process" },
+  { label: "Join us", to: "/careers" },
+  { label: "FAQ", to: "/#faq" },
 ];
 
 export function Nav() {
   const ref = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -22,6 +25,11 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close mobile drawer when the route or hash changes
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     if (open) {
@@ -60,8 +68,8 @@ export function Nav() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-10 h-14 sm:h-16 lg:h-18">
           {/* Brand */}
-          <a
-            href="#top"
+          <Link
+            to="/"
             className="group flex items-center gap-2 sm:gap-2.5 text-[color:var(--color-text-primary)]"
             aria-label="vwv.agency"
             onClick={() => setOpen(false)}
@@ -72,32 +80,32 @@ export function Nav() {
             <span className="font-display text-[17px] font-semibold tracking-tighter leading-none">
               VWV<span className="text-[color:var(--color-accent)]">.agency</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
+              <Link
+                key={l.to}
+                to={l.to}
                 className="relative px-3 py-2 text-sm text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-text-primary)] transition-colors"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Right */}
           <div className="flex items-center gap-2">
-            <a
-              href="#book"
+            <Link
+              to="/#book"
               className="hidden md:inline-flex items-center gap-2 h-9 px-4 rounded-md bg-[color:var(--color-text-primary)] text-[color:var(--color-canvas)] text-sm font-medium hover:bg-[color:var(--color-accent)] hover:text-[color:var(--color-accent-fg)] transition-colors"
             >
-              Configure a sprint
+              Book the intro call
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" aria-hidden>
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
-            </a>
+            </Link>
 
             {/* Hamburger */}
             <button
@@ -145,7 +153,7 @@ export function Nav() {
               <ul className="flex-1 flex flex-col gap-1 border-t border-[color:var(--color-border-subtle)] pt-6">
                 {links.map((l, i) => (
                   <motion.li
-                    key={l.href}
+                    key={l.to}
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -154,8 +162,8 @@ export function Nav() {
                       ease: [0.16, 1, 0.3, 1],
                     }}
                   >
-                    <a
-                      href={l.href}
+                    <Link
+                      to={l.to}
                       onClick={() => setOpen(false)}
                       className="group flex items-center justify-between py-5 border-b border-[color:var(--color-border-subtle)] text-[color:var(--color-text-primary)]"
                     >
@@ -175,7 +183,7 @@ export function Nav() {
                       >
                         <path d="M5 12h14M13 5l7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -186,16 +194,16 @@ export function Nav() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="mt-10"
               >
-                <a
-                  href="#book"
+                <Link
+                  to="/#book"
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-between gap-3 h-14 px-6 rounded-md bg-[color:var(--color-accent)] text-[color:var(--color-accent-fg)] text-base font-medium"
                 >
-                  <span>Configure a sprint</span>
+                  <span>Book the intro call</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" aria-hidden>
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
                 <p className="mt-6 eyebrow">hello@vwv.agency</p>
               </motion.div>
             </motion.nav>
