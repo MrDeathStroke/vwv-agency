@@ -110,10 +110,10 @@ export function SprintTiers() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <span className="font-mono text-xs text-[color:var(--color-accent)]">
-                01
+                03
               </span>
               <span className="h-px w-12 bg-[color:var(--color-border)]" />
-              <p className="eyebrow">Sprints · the menu</p>
+              <p className="eyebrow">Sprints · the shape</p>
             </div>
             <h2 className="font-display font-semibold tracking-tightest leading-[1.0] text-[color:var(--color-text-primary)] text-[clamp(2rem,5vw,4rem)] max-w-3xl text-balance">
               Three productized sprints. Pick the shape. Scope it on the call.

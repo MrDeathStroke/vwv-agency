@@ -11,46 +11,53 @@ type Step = {
 
 const steps: Step[] = [
   {
-    w: "WEEK 0",
-    label: "Scoping call",
-    title: "30 minutes. One workflow. Three metrics.",
-    body: "A free 30-minute call to name the workflow you want rebuilt and the three numbers we will move. If we do not see a sprint we can ship, we say so on the call.",
-    deliverable: "Go / no-go decision, no obligation.",
+    w: "STEP 1",
+    label: "Intro call",
+    title: "30 minutes. Purvang on the line.",
+    body: "A free 30-minute call to name the workflow you want rebuilt and the metrics that should move. If we do not see a sprint we can ship, we say so on the call.",
+    deliverable: "Go / no-go decision. No obligation either way.",
   },
   {
-    w: "WEEK 1",
-    label: "Plan",
-    title: "One page. One signature.",
-    body: "We come back with a one-page sprint plan: scope, timebox, the three metrics we will move, the stop-conditions, and the commercial terms. You sign one page. The clock starts when the page is signed.",
-    deliverable: "Signed sprint plan and commercial terms.",
+    w: "STEP 2",
+    label: "Approved · book the days",
+    title: "Calendar-day booking.",
+    body: "You pick days from our calendar. Days, not retainers. We tell you in writing how many days the workflow will need before you book anything. The clock starts when the days are confirmed.",
+    deliverable: "Signed one-page sprint plan with commercial terms.",
   },
   {
-    w: "WEEK 2",
-    label: "Instrument",
-    title: "Measure the workflow as it is today.",
-    body: "Before we change anything, we measure. Baseline Cycle Time, baseline OPEX line, baseline error rate. Nothing else gets reported against numbers we did not record on day one.",
-    deliverable: "Baseline dashboard, shared with you in your stack.",
+    w: "STEP 3",
+    label: "On the premises",
+    title: "Your office. Your team. Our cross-functional crew.",
+    body: "Strategist, technologist, branding, social, all in one room. Your major stakeholders in the same room. We arrive with the question framework. The work happens face to face for the first stretch of the sprint.",
+    deliverable: "Workflow mapped as it actually runs.",
   },
   {
-    w: "WEEK 3–4",
-    label: "Rebuild",
-    title: "Architecture, agents, evals.",
-    body: "We rebuild the workflow around AI orchestration. Tool-calling agents handle the autonomous path, humans handle the boundaries. Continuous evals run against a held-out test set every night.",
-    deliverable: "Staged deployment, your team's review.",
+    w: "STEP 4",
+    label: "Hackathon sprint",
+    title: "Process debt, named and quantified.",
+    body: "Structured question framework. We map the touch points, time the cycle, define the error rate, and name the process debt. Your stakeholders contribute, push back, and approve as we go.",
+    deliverable: "Baseline dashboard. Three-metric instrumentation in writing.",
   },
   {
-    w: "WEEK 5",
-    label: "Ship",
-    title: "Production. Quietly. With monitoring.",
-    body: "We ship the rebuilt workflow into production with monitoring, dashboards, and a rollback path. Your team operates the new workflow for the last week with us in the room.",
-    deliverable: "Production deployment + runbook.",
+    w: "STEP 5",
+    label: "Parallel build",
+    title: "The software cycle was already running.",
+    body: "Architecture review, AI orchestration layer, tool-calling agents in your stack, continuous evals against held-out tests. The build track started on day two so deployment lands inside the sprint, not after it.",
+    deliverable: "Staged deployment ready for your team to operate.",
   },
   {
-    w: "WEEK 6",
-    label: "Receipts",
-    title: "Close-out: three numbers, signed.",
-    body: "We measure the new workflow against the same instruments that measured the old one. The deltas are reported to your CFO and your operations lead. Final invoice settles on receipts, not hours.",
-    deliverable: "Sprint close-out, signed by both sides.",
+    w: "STEP 6",
+    label: "Pivot decision",
+    title: "Bespoke build, or curated tool stack.",
+    body: "Two paths out. Either we ship a bespoke system built on your stack, or we recommend an existing tool stack configured against your KPIs. The choice is workflow-led, not vendor-led. We say so honestly.",
+    deliverable: "Production deployment plus runbook. Or tool-stack handover with configuration.",
+  },
+  {
+    w: "STEP 7",
+    label: "KPI handover",
+    title: "Three numbers, signed by your CFO.",
+    body: "We measure the new workflow against the same instruments that measured the old one. The deltas are reported to your CFO and your operations lead. The dashboard you walk away with belongs to you.",
+    deliverable: "Signed close-out. KPI dashboard. Ownership transfer.",
   },
 ];
 
@@ -74,13 +81,13 @@ export function Process() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">
             <span className="font-mono text-xs text-[color:var(--color-accent)]">
-              02
+              04
             </span>
             <span className="h-px w-12 bg-[color:var(--color-border)]" />
-            <p className="eyebrow">Process · a Build sprint, week by week</p>
+            <p className="eyebrow">Process · how a sprint runs</p>
           </div>
           <h2 className="font-display font-semibold tracking-tightest leading-[1.0] text-[color:var(--color-text-primary)] text-[clamp(2rem,5vw,4rem)] max-w-4xl text-balance">
-            Six weeks. One workflow. Three signed numbers.
+            Seven steps. One workflow. Stakeholders in the room.
           </h2>
         </div>
 

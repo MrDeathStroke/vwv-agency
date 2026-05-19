@@ -50,7 +50,7 @@ export function Faq() {
           <div className="lg:col-span-4 lg:sticky lg:top-28">
             <div className="flex items-center gap-3 mb-6">
               <span className="font-mono text-xs text-[color:var(--color-accent)]">
-                05
+                07
               </span>
               <span className="h-px w-12 bg-[color:var(--color-border)]" />
               <p className="eyebrow">FAQ · sharp questions only</p>

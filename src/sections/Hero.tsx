@@ -75,15 +75,23 @@ export function Hero() {
           {/* Left: Headline + CTA */}
           <div className="lg:col-span-7">
             {/* Headline */}
-            <h1 className="font-display font-semibold tracking-tightest leading-[0.92] text-[color:var(--color-text-primary)] text-[clamp(2.75rem,8vw,6.5rem)] text-balance m-0">
+            <h1 className="font-display font-semibold tracking-tightest leading-[0.95] text-[color:var(--color-text-primary)] text-[clamp(2.5rem,7vw,5.5rem)] text-balance m-0">
               <span className="block overflow-hidden pb-[0.05em]">
                 <span data-h-line className="block will-change-transform">
-                  Sprints,
+                  Process debt
                 </span>
               </span>
               <span className="block overflow-hidden pb-[0.05em]">
                 <span data-h-line className="block will-change-transform">
-                  shipped<span className="text-[color:var(--color-accent)]">.</span>
+                  to deployed system<span className="text-[color:var(--color-accent)]">.</span>
+                </span>
+              </span>
+              <span className="block overflow-hidden pb-[0.05em]">
+                <span
+                  data-h-line
+                  className="block will-change-transform text-[color:var(--color-text-secondary)] text-[0.55em] font-medium tracking-tight leading-tight mt-3"
+                >
+                  In days, on your premises.
                 </span>
               </span>
             </h1>
@@ -93,9 +101,11 @@ export function Hero() {
               data-h-lede
               className="mt-8 max-w-xl text-lg lg:text-xl text-[color:var(--color-text-secondary)] text-pretty leading-relaxed"
             >
-              Fixed-scope, fixed-price AI and automation sprints. One signed
-              page, one named workflow, three metrics that move. Weeks, not
-              quarters.
+              Strategy and execution under one roof. A cross-functional team
+              shows up at your office, your warehouse, your studio, your hotel.
+              Stakeholders in the room. Hackathon-style sprint. Software
+              cycle running in parallel. KPI dashboard handed over at
+              close-out.
             </p>
 
             {/* CTAs */}
@@ -105,17 +115,17 @@ export function Hero() {
                 href="#book"
                 className="group inline-flex items-center gap-2 h-12 px-6 rounded-md bg-[color:var(--color-text-primary)] text-[color:var(--color-canvas)] text-[15px] font-medium hover:bg-[color:var(--color-accent)] hover:text-[color:var(--color-accent-fg)] transition-all duration-300"
               >
-                Configure a sprint
+                Book the intro call
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden>
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
               </a>
               <a
                 data-h-cta
-                href="#sprints"
+                href="#process"
                 className="inline-flex items-center gap-2 h-12 px-6 rounded-md border border-[color:var(--color-border)] hover:border-[color:var(--color-accent)] text-[color:var(--color-text-primary)] text-[15px] font-medium transition-colors"
               >
-                See the menu
+                See how a sprint runs
               </a>
             </div>
 

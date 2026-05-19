@@ -5,9 +5,9 @@ import { gsap } from "../lib/gsap";
 import { AnimatedVMark } from "./AnimatedVMark";
 
 const links = [
+  { label: "Sectors", href: "#sectors" },
   { label: "Sprints", href: "#sprints" },
   { label: "Process", href: "#process" },
-  { label: "Receipts", href: "#receipts" },
   { label: "FAQ", href: "#faq" },
 ];
 

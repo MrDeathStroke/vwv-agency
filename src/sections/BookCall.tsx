@@ -17,9 +17,12 @@ const tierOptions = [
   { value: "unsure", label: "Not sure yet. Help us scope it." },
 ];
 
+type Mode = "cal" | "form";
+
 export function BookCall() {
   const root = useRef<HTMLElement>(null);
   const [state, setState] = useState<State>({ kind: "idle" });
+  const [mode, setMode] = useState<Mode>("cal");
 
   useGSAP(
     () => {
@@ -118,7 +121,7 @@ export function BookCall() {
           <div data-bk-headline className="lg:col-span-6">
             <div className="flex items-center gap-3 mb-6">
               <span className="font-mono text-xs text-[color:var(--color-accent)]">
-                06
+                08
               </span>
               <span className="h-px w-12 bg-[color:var(--color-border)]" />
               <p className="eyebrow">Book a sprint · scoping call</p>
@@ -162,19 +165,90 @@ export function BookCall() {
             </ul>
           </div>
 
-          {/* Right: Form card */}
+          {/* Right: Cal.com OR inquiry form (tabbed) */}
           <motion.div
             data-bk-card
             className="lg:col-span-6"
           >
             <div className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-canvas-raised)] overflow-hidden">
-              <div className="flex items-center justify-between px-6 py-4 border-b border-[color:var(--color-border-subtle)] bg-[color:var(--color-canvas-sunken)]">
-                <p className="eyebrow">Inquiry form</p>
-                <p className="font-mono text-[10px] tracking-widest text-[color:var(--color-text-tertiary)]">
-                  Reply within 24h
-                </p>
+              {/* Tab bar */}
+              <div role="tablist" className="flex border-b border-[color:var(--color-border-subtle)] bg-[color:var(--color-canvas-sunken)]">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={mode === "cal"}
+                  onClick={() => setMode("cal")}
+                  className={[
+                    "flex-1 px-4 sm:px-6 py-4 text-left transition-colors",
+                    mode === "cal"
+                      ? "bg-[color:var(--color-canvas-raised)] border-b-2 border-[color:var(--color-accent)]"
+                      : "border-b-2 border-transparent hover:bg-[color:var(--color-canvas-raised)]/40",
+                  ].join(" ")}
+                >
+                  <p
+                    className={[
+                      "eyebrow",
+                      mode === "cal" ? "!text-[color:var(--color-accent)]" : "",
+                    ].join(" ")}
+                  >
+                    Book the intro call
+                  </p>
+                  <p className="mt-1 text-xs text-[color:var(--color-text-secondary)]">
+                    30 min · Purvang · free
+                  </p>
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={mode === "form"}
+                  onClick={() => setMode("form")}
+                  className={[
+                    "flex-1 px-4 sm:px-6 py-4 text-left transition-colors",
+                    mode === "form"
+                      ? "bg-[color:var(--color-canvas-raised)] border-b-2 border-[color:var(--color-accent)]"
+                      : "border-b-2 border-transparent hover:bg-[color:var(--color-canvas-raised)]/40",
+                  ].join(" ")}
+                >
+                  <p
+                    className={[
+                      "eyebrow",
+                      mode === "form" ? "!text-[color:var(--color-accent)]" : "",
+                    ].join(" ")}
+                  >
+                    Write to us
+                  </p>
+                  <p className="mt-1 text-xs text-[color:var(--color-text-secondary)]">
+                    Send context first
+                  </p>
+                </button>
               </div>
 
+              {/* Cal.com inline embed */}
+              {mode === "cal" && (
+                <motion.div
+                  key="cal"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="relative"
+                >
+                  <iframe
+                    src="https://cal.com/purvang-vwv?embed=true&theme=auto&hideEventTypeDetails=false"
+                    width="100%"
+                    height="660"
+                    frameBorder="0"
+                    title="Book a 30-minute intro call with Purvang"
+                    className="block w-full bg-[color:var(--color-canvas-raised)]"
+                    loading="lazy"
+                  />
+                  <p className="px-6 py-4 border-t border-[color:var(--color-border-subtle)] font-mono text-[10px] uppercase tracking-widest text-[color:var(--color-text-tertiary)]">
+                    Calendar opens at cal.com/purvang-vwv
+                  </p>
+                </motion.div>
+              )}
+
+              {/* Inquiry form (existing flow, kept as fallback) */}
+              {mode === "form" && (
               <AnimatePresence mode="wait">
                 {state.kind === "success" ? (
                   <motion.div
@@ -294,6 +368,7 @@ export function BookCall() {
                   </motion.form>
                 )}
               </AnimatePresence>
+              )}
             </div>
           </motion.div>
         </div>

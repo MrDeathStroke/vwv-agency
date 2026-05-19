@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
 import { Hero } from "./sections/Hero";
+import { Sectors } from "./sections/Sectors";
 import { SprintTiers } from "./sections/SprintTiers";
 import { Process } from "./sections/Process";
 import { Receipts } from "./sections/Receipts";
@@ -25,6 +26,7 @@ function App() {
       <Nav />
       <main>
         <Hero />
+        <Sectors />
         <SprintTiers />
         <Process />
         <Receipts />
