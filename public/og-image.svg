@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Bone canvas -->
+  <rect width="1200" height="630" fill="#F5F4EF"/>
+
+  <!-- Blueprint grid background (very faint) -->
+  <g opacity="0.06">
+    <!-- vertical -->
+    <line x1="100"  y1="0" x2="100"  y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="200"  y1="0" x2="200"  y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="300"  y1="0" x2="300"  y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="400"  y1="0" x2="400"  y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="500"  y1="0" x2="500"  y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="600"  y1="0" x2="600"  y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="700"  y1="0" x2="700"  y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="800"  y1="0" x2="800"  y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="900"  y1="0" x2="900"  y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="1000" y1="0" x2="1000" y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="1100" y1="0" x2="1100" y2="630" stroke="#0A0A0B" stroke-width="1"/>
+    <!-- horizontal -->
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#0A0A0B" stroke-width="1"/>
+    <line x1="0" y1="500" x2="1200" y2="500" stroke="#0A0A0B" stroke-width="1"/>
+  </g>
+
+  <!-- Cobalt edge bloom (radial, top-right corner this time for variety) -->
+  <defs>
+    <radialGradient id="bloom-m" cx="80%" cy="0%" r="50%">
+      <stop offset="0%"   stop-color="#2563EB" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bloom-m)"/>
+
+  <!-- Velocity-field V mark, left side, in Carbon ink on Bone -->
+  <g transform="translate(80, 145) scale(3.4)">
+    <defs>
+      <clipPath id="og-muscle-vmask">
+        <path d="M 14 16 L 50 82 L 86 16 Z"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#og-muscle-vmask)" stroke="#0A0A0B" stroke-linecap="square">
+      <line x1="0" y1="24" x2="100" y2="24" stroke-width="1.5"/>
+      <line x1="0" y1="33" x2="100" y2="33" stroke-width="2"/>
+      <line x1="0" y1="42" x2="100" y2="42" stroke-width="2.5"/>
+      <line x1="0" y1="51" x2="100" y2="51" stroke-width="3"/>
+      <line x1="0" y1="60" x2="100" y2="60" stroke-width="3.5"/>
+      <line x1="0" y1="69" x2="100" y2="69" stroke-width="4"/>
+      <line x1="0" y1="78" x2="100" y2="78" stroke-width="4"/>
+    </g>
+  </g>
+
+  <!-- VWV.agency wordmark + operator tagline -->
+  <text x="500" y="245" font-family="Geist" font-weight="700" font-size="120" letter-spacing="-6" fill="#0A0A0B">VWV<tspan fill="#2563EB">.agency</tspan></text>
+
+  <text x="500" y="330" font-family="Geist" font-weight="600" font-size="42" letter-spacing="-1.5" fill="#0A0A0B">Process debt to</text>
+  <text x="500" y="385" font-family="Geist" font-weight="600" font-size="42" letter-spacing="-1.5" fill="#0A0A0B">AI automation<tspan fill="#2563EB">.</tspan></text>
+
+  <text x="500" y="436" font-family="Geist" font-weight="400" font-size="26" letter-spacing="-0.4" fill="#4A4A52">In days, on your premises.</text>
+
+  <!-- URL at bottom -->
+  <text x="80" y="588" font-family="Geist Mono" font-weight="500" font-size="16" letter-spacing="3" fill="#4A4A52">VWV.AGENCY</text>
+  <text x="1120" y="588" text-anchor="end" font-family="Geist Mono" font-weight="500" font-size="16" letter-spacing="3" fill="#2563EB">THE MUSCLE</text>
+</svg>
