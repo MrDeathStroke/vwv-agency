@@ -1,5 +1,5 @@
 // Vercel Edge function — POST /api/inquiry
-// Sends the sprint inquiry to Purvang via Resend.
+// Sends the sprint inquiry to the VWV inbox via Resend.
 
 import { Resend } from "resend";
 
@@ -63,7 +63,7 @@ export default async function handler(req: Request) {
 
   const resend = new Resend(apiKey);
 
-  // 1) Internal notification to Purvang
+  // 1) Internal notification to the VWV inbox
   try {
     await resend.emails.send({
       from: FROM,
@@ -100,7 +100,7 @@ export default async function handler(req: Request) {
       text: [
         `Hi ${name.split(" ")[0]},`,
         ``,
-        `Thanks for sending over the inquiry for ${company}. Purvang has it.`,
+        `Thanks for sending over the inquiry for ${company}. We have it.`,
         ``,
         `Next step: reply within 24 hours with two or three time options for a`,
         `30-minute scoping call. The call is free. The deliverable after the`,

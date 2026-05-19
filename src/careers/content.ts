@@ -1,5 +1,5 @@
 /**
- * Open roles at VWV. Each role is a real position Purvang is hiring for
+ * Open roles at VWV. Each role is a real position we're hiring for
  * to scale the hackathon-style sprint model. Voice: operator-grade,
  * outcomes-first, no corporate-ladder titles, no fake levels.
  */

@@ -1,5 +1,5 @@
 // Vercel Edge function — POST /api/apply
-// Sends a job application to Purvang via Resend, plus a confirmation
+// Sends a job application to the VWV inbox via Resend, plus a confirmation
 // reply to the applicant.
 
 import { Resend } from "resend";
@@ -88,7 +88,7 @@ export default async function handler(req: Request) {
 
   const resend = new Resend(apiKey);
 
-  // 1) Internal notification to Purvang
+  // 1) Internal notification to the VWV inbox
   try {
     await resend.emails.send({
       from: FROM,
@@ -131,7 +131,7 @@ export default async function handler(req: Request) {
       text: [
         `Hi ${name.split(" ")[0]},`,
         ``,
-        `Thanks for the application for ${roleLabel}. Purvang has it.`,
+        `Thanks for the application for ${roleLabel}. We have it.`,
         ``,
         `Next step: every application gets read personally. If we see a`,
         `fit, you'll hear back within 5 working days with two or three`,

@@ -34,7 +34,7 @@ const faqs: QA[] = [
   },
   {
     q: "Who actually does the work?",
-    a: "Purvang leads every sprint personally. A small, deliberately constant team rebuilds the workflow alongside your engineers. We do not subcontract, do not staff-augment, and do not change the team mid-sprint.",
+    a: "The founder leads every sprint personally. A small, deliberately constant team rebuilds the workflow alongside your engineers. We do not subcontract, do not staff-augment, and do not change the team mid-sprint.",
   },
 ];
 

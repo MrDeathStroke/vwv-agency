@@ -141,7 +141,7 @@ export function BookCall() {
 
             <ul className="mt-10 space-y-3 max-w-md">
               {[
-                "Founder-led: Purvang on the call, not a salesperson.",
+                "Founder-led. Not a salesperson on the call.",
                 "No obligation. The plan is yours to share internally.",
                 "If we say no, we say it on the call.",
               ].map((bullet) => (
@@ -194,7 +194,7 @@ export function BookCall() {
                     Book the intro call
                   </p>
                   <p className="mt-1 text-xs text-[color:var(--color-text-secondary)]">
-                    30 min · Purvang · free
+                    30 min · Founder-led · free
                   </p>
                 </button>
                 <button
@@ -237,12 +237,12 @@ export function BookCall() {
                     width="100%"
                     height="660"
                     frameBorder="0"
-                    title="Book a 30-minute intro call with Purvang"
+                    title="Book a 30-minute intro call with VWV"
                     className="block w-full bg-[color:var(--color-canvas-raised)]"
                     loading="lazy"
                   />
                   <p className="px-6 py-4 border-t border-[color:var(--color-border-subtle)] font-mono text-[10px] uppercase tracking-widest text-[color:var(--color-text-tertiary)]">
-                    Calendar opens at cal.com/purvang-vwv
+                    Scheduled via Cal.com
                   </p>
                 </motion.div>
               )}
@@ -267,7 +267,7 @@ export function BookCall() {
                       Got it. Reply within 24 hours.
                     </h3>
                     <p className="mt-3 text-sm text-[color:var(--color-text-secondary)] max-w-sm mx-auto">
-                      Purvang will reach out with two or three time options for the
+                      We'll reach out with two or three time options for the
                       30-minute call. If your inquiry is urgent, email{" "}
                       <a
                         href="mailto:hello@vwv.agency"

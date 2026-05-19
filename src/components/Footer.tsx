@@ -45,7 +45,7 @@ export function Footer() {
                 valuewithvelocity.com
               </p>
               <p className="mt-1 text-sm text-[color:var(--color-text-secondary)]">
-                Long-form essays from Purvang on the end of the SaaS-template era, process debt, and AI-native operations.
+                Long-form essays on the end of the SaaS-template era, process debt, and AI-native operations.
               </p>
               <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--color-accent)]">
                 Read dispatches

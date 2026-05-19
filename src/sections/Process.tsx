@@ -13,7 +13,7 @@ const steps: Step[] = [
   {
     w: "STEP 1",
     label: "Intro call",
-    title: "30 minutes. Purvang on the line.",
+    title: "30 minutes. Founder on the line.",
     body: "A free 30-minute call to name the workflow you want rebuilt and the metrics that should move. If we do not see a sprint we can ship, we say so on the call.",
     deliverable: "Go / no-go decision. No obligation either way.",
   },

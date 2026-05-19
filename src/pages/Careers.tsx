@@ -240,9 +240,9 @@ export function Careers() {
               </h2>
 
               <p className="mt-6 text-lg text-[color:var(--color-text-secondary)] text-pretty leading-relaxed max-w-md">
-                One form. Purvang reads every application personally. If we
-                see a fit, you hear back within 5 working days with two or
-                three time options for a 30-minute call.
+                One form. We read every application personally. If we see a
+                fit, you hear back within 5 working days with two or three
+                time options for a 30-minute call.
               </p>
 
               <ul className="mt-8 space-y-3 max-w-md">
@@ -314,10 +314,10 @@ export function Careers() {
                         Got it. Reply within 5 working days.
                       </h3>
                       <p className="mt-3 text-sm text-[color:var(--color-text-secondary)] max-w-sm mx-auto">
-                        Purvang reads every application personally. If we see
-                        a fit, you hear back with time options for a
-                        30-minute call. If not, we say so directly within the
-                        same week.
+                        We read every application personally. If we see a
+                        fit, you hear back with time options for a 30-minute
+                        call. If not, we say so directly within the same
+                        week.
                       </p>
                     </motion.div>
                   ) : (
@@ -433,7 +433,7 @@ export function Careers() {
                       </AnimatePresence>
 
                       <p className="font-mono text-[10px] uppercase tracking-widest text-[color:var(--color-text-tertiary)]">
-                        One form, one Purvang. No talent pipeline list, no
+                        One form, one inbox. No talent pipeline list, no
                         recruiters in the loop.
                       </p>
                     </motion.form>
