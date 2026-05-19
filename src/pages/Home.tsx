@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Hero } from "../sections/Hero";
 import { Sectors } from "../sections/Sectors";
 import { SprintTiers } from "../sections/SprintTiers";
+import { Anatomy } from "../sections/Anatomy";
 import { Process } from "../sections/Process";
 import { Stack } from "../sections/Stack";
 import { JoinUs } from "../sections/JoinUs";
@@ -21,6 +22,7 @@ export function Home() {
       <Hero />
       <Sectors />
       <SprintTiers />
+      <Anatomy />
       <Process />
       <Stack />
       <JoinUs />

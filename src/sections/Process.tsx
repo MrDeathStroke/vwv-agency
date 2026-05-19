@@ -81,7 +81,7 @@ export function Process() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">
             <span className="font-mono text-xs text-[color:var(--color-accent)]">
-              04
+              05
             </span>
             <span className="h-px w-12 bg-[color:var(--color-border)]" />
             <p className="eyebrow">Process · how a sprint runs</p>
