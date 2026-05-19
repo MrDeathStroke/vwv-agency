@@ -83,7 +83,7 @@ export function Hero() {
               </span>
               <span className="block overflow-hidden pb-[0.05em]">
                 <span data-h-line className="block will-change-transform">
-                  to deployed system<span className="text-[color:var(--color-accent)]">.</span>
+                  to AI automation<span className="text-[color:var(--color-accent)]">.</span>
                 </span>
               </span>
               <span className="block overflow-hidden pb-[0.05em]">
@@ -101,11 +101,11 @@ export function Hero() {
               data-h-lede
               className="mt-8 max-w-xl text-lg lg:text-xl text-[color:var(--color-text-secondary)] text-pretty leading-relaxed"
             >
-              Strategy and execution under one roof. A cross-functional team
-              shows up at your office, your warehouse, your studio, your hotel.
-              Stakeholders in the room. Hackathon-style sprint. Software
-              cycle running in parallel. KPI dashboard handed over at
-              close-out.
+              A cross-functional team shows up at your office, your
+              warehouse, your studio, your hotel. We map the workflow,
+              build the AI automation that retires the bottleneck, and hand
+              over a KPI dashboard on the way out. Hackathon-style sprint.
+              Stakeholders in the room.
             </p>
 
             {/* CTAs */}

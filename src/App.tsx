@@ -5,7 +5,6 @@ import { Hero } from "./sections/Hero";
 import { Sectors } from "./sections/Sectors";
 import { SprintTiers } from "./sections/SprintTiers";
 import { Process } from "./sections/Process";
-import { Receipts } from "./sections/Receipts";
 import { Stack } from "./sections/Stack";
 import { Faq } from "./sections/Faq";
 import { BookCall } from "./sections/BookCall";
@@ -29,7 +28,6 @@ function App() {
         <Sectors />
         <SprintTiers />
         <Process />
-        <Receipts />
         <Stack />
         <Faq />
         <BookCall />
